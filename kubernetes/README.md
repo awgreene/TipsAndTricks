@@ -9,12 +9,16 @@
 ## Get Namespaces
 `kubectl get namespaces`
 
+# Nodes
+## Get nodes
+`kubectl -n {{ NAMESPACE }} get nodes`
+
 # Pods
 ## Get Pods
-`kubectl -n <NAMESPACE> get pods`
+`kubectl -n {{ NAMESPACE }} get pods`
 
 ## Describe a Pod
-`kubectl -n <NAMESPACE> describe pod <POD_NAME>`
+`kubectl -n {{ NAMESPACE }} describe pod {{ POD_NAME }}`
 
 ## Delete Pods
-`kubectl -n <NAMESPACE> delete pods <POD_NAME>`
+`kubectl -n {{ NAMESPACE }} delete pods {{ POD_NAME }}`

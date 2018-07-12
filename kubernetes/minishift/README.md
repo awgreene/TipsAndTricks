@@ -1,5 +1,8 @@
 #Minishift
 
+## ssh into a Minishift VM
+`minishift ssh`
+
 ## Tag image with a new tag
 `oc tag <project>/<build>:<label> <project>/<build>:<label>`
 
