@@ -1,19 +1,22 @@
 #Minishift
 
-## ssh into a Minishift VM
+# ssh into a Minishift VM
 `minishift ssh`
+## Projects
+### New Project
+`oc new-project {{ PROJECT_NAME }} --description="{{ DESCRIPTION }}" --display-name="{{ DISPLAY_NAME }}"
 
 ## Tag image with a new tag
-`oc tag <project>/<build>:<label> <project>/<build>:<label>`
+`oc tag {{ PROJECT }}/{{ BUILD }}:{{ OLD_LABEL }} {{ PROJECT }}/{{ BUILD }}:{{ NEW_LABEL }}`
 
 ## Remove scc
-oc adm policy remove-scc-from-user anyuid -z jenkins
+oc adm policy remove-scc-from-user anyuid -z {{ NAME }}
 
 ## Start a failing container
-oc debug dc/<BUILD_NAME>
+oc debug dc/{{ BUILD_NAME }}
 
 ## SSh into a container
-oc rsh <CONTAINER_NAME>
+oc rsh {{ CONTAINER_NAME }}
 
 ## SET ENV Variable
 oc set env dc/<CONTAINER_NAME> <VARIABLE_NAME>=<VARIABLE_VALUE>
@@ -22,16 +25,16 @@ oc set env dc/<CONTAINER_NAME> <VARIABLE_NAME>=<VARIABLE_VALUE>
 oc set env dc/helloworld --list
 
 ## Get Logs
-oc logs <CONTAINER_NAME>
+oc logs {{ CONTAINER_NAME }}
 
 ### Get logs from terminated container
-oc logs <CONTAINER_NAME> --previous
+oc logs {{ CONTAINER_NAME }} --previous
 
 ## List pods
-oc get pods --selector <LABEL>=<VALUE>
+oc get pods --selector {{ LABEL }}={{ VALUE }}
 
 ## Describe pod
-oc describe pod/<NAME>
+oc describe pod/{{ NAME }}
 
 ## Create a project
 oc new-project <Short Name> --display-name="<NAME>"

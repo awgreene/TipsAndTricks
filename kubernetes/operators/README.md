@@ -15,3 +15,7 @@ github.com/coreos/etcd-operator
 ## Core OS Prometheus Operator
 https://coreos.com/blog/the-prometheus-operator.html
 github.com/coreos/prometheus-operator
+
+## Common Errors
+### no matches for app.coreos.com/, Kind=ClusterServiceVersion-v1
+`kubectl apply -f deploy/upstream/manifests/0.4.0kubectl apply -f deploy/upstream/manifests/0.4.0`
