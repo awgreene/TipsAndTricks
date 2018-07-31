@@ -22,3 +22,15 @@
 
 ## Delete Pods
 `kubectl -n {{ NAMESPACE }} delete pods {{ POD_NAME }}`
+
+## Create Pod based off an Image
+`kubectl -n {{ NAMESPACE }} run --image={{ IMAGE_NAME }} {{ POD_NAME }}`
+
+# Expose a Service
+`kubectl expose -n {{ NAMESPACE}} deployment/{{ DEPLOYMENT_NAME }} --port {{ EXPOSED_PORT }}`
+
+## Create a Proxy
+`kubectl proxy`
+
+## Access a Pod through Proxy
+http://localhost:8001/api/v1/proxy/namespaces/{{ NAMESPACE }}/service/{{ SERVICE_NAME }}/{{ END_POINT }}
