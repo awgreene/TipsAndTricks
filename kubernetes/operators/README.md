@@ -1,4 +1,6 @@
-# Useful Links
+# Tips for Operators
+
+## Useful Links
 ## Kubernetes Operators Managing Complex Software
 https://www.youtube.com/watch?v=vDSKLolrGkk
 

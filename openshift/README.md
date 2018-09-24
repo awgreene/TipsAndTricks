@@ -1,7 +1,36 @@
-#Minishift
+# Openshift
 
-# ssh into a Minishift VM
-`minishift ssh`
+## Install Pre 4.0
+
+1. Grab the binary: https://www.okd.io/download.html
+2. Install Docker: https://docs.docker.com/install/linux/docker-ce/fedora/
+2. Update /etc/docker/daemon.json to include the following:
+```
+{ "insecure-registries": ["172.30.0.0/16"] }
+```
+
+## Install 4.0+
+
+### Set reusable variables
+```bash
+$ DIR_NAME=cluster-0
+$ LOG_LEVEL=debug
+$ mkdir $DIR_NAME
+```
+### Create a reuseable install-config
+```bash
+$ bin/openshift-install create install-config  --dir $DIR_NAME --log-level $LOG_LEVEL
+```
+
+```bash
+$ bin/openshift-install create cluster --dir $DIR_NAME --log-level $LOG_LEVEL
+```
+
+### Destroy cluster
+```bash
+$ bin/openshift-install destroy cluster --dir $DIR_NAME --log-level $LOG_LEVEL
+```
+
 ## Projects
 ### New Project
 `oc new-project {{ PROJECT_NAME }} --description="{{ DESCRIPTION }}" --display-name="{{ DISPLAY_NAME }}"
